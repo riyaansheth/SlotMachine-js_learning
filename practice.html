@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Slot Machine</title>
+<style>
+body{font-family:sans-serif;text-align:center;margin-top:50px}
+.slot{font-size:48px;margin:10px}
+button{font-size:20px;padding:10px 20px}
+</style>
+</head>
+<body>
+
+<div id="slots">
+<span class="slot" id="s1">🍒</span>
+<span class="slot" id="s2">🍒</span>
+<span class="slot" id="s3">🍒</span>
+</div>
+
+<button onclick="spin()">SPIN</button>
+<p id="result"></p>
+
+<script>
+const symbols=["🍒","🍋","🔔","⭐","💎"]
+
+function spin(){
+const a=symbols[Math.floor(Math.random()*symbols.length)]
+const b=symbols[Math.floor(Math.random()*symbols.length)]
+const c=symbols[Math.floor(Math.random()*symbols.length)]
+
+document.getElementById("s1").textContent=a
+document.getElementById("s2").textContent=b
+document.getElementById("s3").textContent=c
+
+document.getElementById("result").textContent=
+(a===b && b===c) ? "YOU WIN 🎉" : "TRY AGAIN"
+}
+</script>
+
+</body>
+</html>
